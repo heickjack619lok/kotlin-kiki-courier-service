@@ -68,6 +68,7 @@ fun main() {
                 "No. of Packages: ${courierOrderSheet?.packageCount}\n"
     )
 
+    println("Output: ")
     calcPackagesETA(courierPackages, deliveryVehicles).forEach {
         val beforeDiscount =
             courierOrderSheet!!.baseDeliveryRate + (it.weight * 10) + (it.distance * 5);
