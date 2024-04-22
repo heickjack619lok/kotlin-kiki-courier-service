@@ -27,9 +27,7 @@ fun main() {
     do {
         print(">>> ")
         try {
-            getInput().apply {
-                courierOrderSheet = computeCourierOrderSheet(this)
-            }
+            getInput().apply { courierOrderSheet = computeCourierOrderSheet(this) }
         } catch (e: Exception) {
             println(e.message)
         }
@@ -43,11 +41,7 @@ fun main() {
         )
         print(">>> ")
         try {
-            getInput().apply {
-                computeCourierPackage(this).apply {
-                    courierPackages.add(this)
-                }
-            }
+            getInput().apply { courierPackages.add(computeCourierPackage(this)) }
         } catch (e: Exception) {
             println(e.message)
         }
@@ -61,11 +55,7 @@ fun main() {
         )
         print(">>> ")
         try {
-            getInput().apply {
-                computeDeliveryVehicle(this).apply {
-                    deliveryVehicles.addAll(this)
-                }
-            }
+            getInput().apply { deliveryVehicles.addAll(computeDeliveryVehicle(this)) }
         } catch (e: java.lang.Exception) {
             println(e.message)
         }
@@ -90,9 +80,7 @@ fun main() {
         ).roundToInt()
 
         println(
-            "${it.packageId} $discAmount $totalCost ${
-                it.getFinalDeliveryTime().roundOffDecimal()
-            }"
+            "${it.packageId} $discAmount $totalCost ${it.getFinalDeliveryTime().roundOffDecimal()}"
         )
     }
 }
